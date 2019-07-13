@@ -1,6 +1,7 @@
 ;;; almost-mono-themes.el --- Almost monochromatic color themes -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2019 John Olsson
+;; with modifications by Kevin Kainan Li (C) 2019
 
 ;; Author: John Olsson <john@cryon.se>
 ;; Maintainer: John Olsson <john@cryon.se>
@@ -75,7 +76,7 @@
       ;; default
       (default (:background ,background :foreground ,foreground))
       (fringe  (:background ,background))
-      (region  (:background ,highlight  :foreground ,foreground))
+      (region  (:background ,foreground  :foreground ,background))
       (show-paren-match (:background ,background :foreground ,success :bold t))
       (show-paren-mismatch (:background ,background :foreground ,warning :bold t))
       (minibuffer-prompt (:weight bold :foreground ,foreground))
@@ -95,11 +96,9 @@
       (font-lock-variable-name-face (:foreground ,foreground))
       (font-lock-warning-face (:foreground ,foreground :underline (:color ,warning :style wave)))
       (font-lock-builtin-face (:bold t))
-      (font-lock-variable-name-face (:foreground ,foreground :italic t))
-      (font-lock-constant-face (:bold t :italic t))
-      (font-lock-type-face (:italic t))
-      (font-lock-preprocessor-face (:italic t))
-      (font-lock-comment-face (:foreground ,weak :italic t))
+      (font-lock-variable-name-face (:foreground ,foreground))
+      (font-lock-constant-face (:bold t))
+      (font-lock-comment-face (:foreground ,weak))
       (font-lock-string-face (:foreground ,string))
       (font-lock-doc-face (:inherit font-lock-comment-face))
       (line-number (:foreground ,weaker))
@@ -127,8 +126,8 @@
       (company-tooltip-common-selection (:bold t))
       (company-scrollbar-bg (:background ,weaker))
       (company-scrollbar-fg (:background ,weak))
-      (company-tooltip-annotation-selection (:background ,weaker :foreground ,foreground :italic t))
-      (company-tooltip-annotation (:background ,weakest :foreground ,weak :italic t))
+      (company-tooltip-annotation-selection (:background ,weaker :foreground ,foreground))
+      (company-tooltip-annotation (:background ,weakest :foreground ,weak))
 
       ;; git gutter
       (git-gutter:modified (:background ,highlight :foreground ,highlight))
@@ -142,9 +141,8 @@
       ;; ido
       (ido-first-match (:bold t))
       (ido-only-match (:bold t))
-      (ido-subdir (:italic t))
       (ido-virtual (:foreground ,weak))
-      (ido-vertical-match-face (:bold t :italic nil))
+      (ido-vertical-match-face (:bold t))
 
       ;; org mode
       (org-table (:foreground ,weak))
