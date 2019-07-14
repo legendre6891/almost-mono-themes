@@ -76,8 +76,8 @@
       ;; default
       (default (:background ,background :foreground ,foreground))
       (fringe  (:background ,background))
-      (region  (:background ,foreground  :foreground ,background))
-      (show-paren-match (:background ,background :foreground ,success :bold t))
+      (region  (:background ,weak  :foreground ,background))
+      (show-paren-match (:background ,background :bold t))
       (show-paren-mismatch (:background ,background :foreground ,warning :bold t))
       (minibuffer-prompt (:weight bold :foreground ,foreground))
       (isearch (:background ,weak :foreground ,foreground :bold t))
